@@ -1,0 +1,1248 @@
+   /* ---- Importar fuente ---- */
+   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+   /* Estilos generales */
+   body {
+     font-family: 'Playfair Display', serif;
+     margin: 0;
+     padding: 0;
+     line-height: 1.6;
+     background: #006039;
+     /* Verde Rolex */
+     color: #ffffff;
+     padding-top: 80px;
+     /* Compensa el header fijo */
+   }
+
+   /* Header fijo */
+   header {
+     background: #a37e2c;
+     /* Dorado Rolex */
+     color: #ffffff;
+     padding: 1rem 2rem;
+     /* padding general del header */
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     position: fixed;
+     flex-wrap: wrap;
+     top: 0;
+     left: 0;
+     width: 100%;
+     z-index: 1000;
+     transition: all 0.3s ease;
+   }
+
+   header.scrolled {
+     background: rgba(163, 126, 44, 0.95);
+     /* Dorado semitransparente */
+     padding: 0.7rem 2rem;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+   }
+
+   header h1 {
+     margin: 0;
+     color: #ffffff;
+   }
+
+   /* Ajuste del nav para mover los links hacia la izquierda */
+   header nav ul {
+     list-style: none;
+     display: flex;
+     gap: 0.5rem;
+     /* Menos espacio entre los cuadrados */
+     margin-left: 1rem;
+   }
+
+   /* Lista del header en cuadrados */
+   header nav ul li a {
+     display: inline-block;
+     padding: 0.5rem 1rem;
+     background: rgba(255, 255, 255, 0.08);
+     border-radius: 8px;
+     text-decoration: none;
+     color: #ffffff;
+     font-weight: 600;
+     transition: all 0.3s ease;
+     border: 1px solid rgba(255, 255, 255, 0.12);
+   }
+
+   /* Efecto hover */
+   header nav ul li a:hover {
+     background: rgba(163, 126, 44, 0.18);
+     /* Dorado sutil */
+     transform: translateY(-2px);
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     color: #ffffff;
+   }
+
+   .btn-login-header {
+     position: static;
+     margin-left: 1rem;
+     margin-top: 0.5rem;
+     top: 20px;
+     right: 70px;
+     padding: 10px 20px;
+     margin-right: 2.5rem;
+     background: linear-gradient(90deg, #00543E, #007A52);
+     /* verde Rolex */
+     color: #D4AF37;
+     /* dorado */
+     border-radius: 12px;
+     text-decoration: none;
+     font-weight: 500;
+     transition: 0.3s;
+     z-index: 10;
+     /* aseguramos que esté encima de los círculos */
+     border: 2px solid #D4AF37;
+   }
+
+   .btn-login-header:hover {
+     background: linear-gradient(90deg, #007A52, #00543E);
+     color: #fff;
+     border-color: #fff;
+     opacity: 0.9;
+   }
+
+   .header-right {
+     flex: 0 0 auto;
+     /* que ocupe el ancho necesario, no crezca */
+     text-align: right;
+   }
+
+   @media (max-width: 768px) {
+
+     .header-center,
+     .header-right {
+       width: 100%;
+       /* ocupan toda la línea */
+       text-align: center;
+       /* centrado */
+       margin-top: 0.5rem;
+       /* separación entre lista y botón */
+     }
+   }
+
+
+   /* Glass Menu con 8 opciones */
+   .glass-radio-group {
+     --bg: rgba(255, 255, 255, 0.06);
+     --text: #ffffff;
+     display: inline-flex;
+     /* Se ajusta al contenido */
+     position: relative;
+     background: var(--bg);
+     border-radius: 1rem;
+     backdrop-filter: blur(12px);
+     right: 40px;
+     box-shadow:
+       inset 1px 1px 4px rgba(255, 255, 255, 0.12),
+       inset -1px -1px 6px rgba(0, 0, 0, 0.25),
+       0 4px 12px rgba(0, 0, 0, 0.12);
+     overflow: hidden;
+     padding: 0.2rem;
+     /* un pequeño espacio interno */
+   }
+
+   .glass-radio-group label {
+     display: inline-flex;
+     /* Tamaño natural según contenido */
+     align-items: center;
+     justify-content: center;
+     padding: 0.8rem 1.2rem;
+     /* controla el tamaño de cada botón */
+     min-width: 80px;
+     /* opcional, evita que sea demasiado pequeño */
+     cursor: pointer;
+     font-weight: 600;
+     color: var(--text);
+     position: relative;
+     z-index: 2;
+     transition: color 0.3s ease-in-out;
+   }
+
+
+   .glass-radio-group input {
+     display: none;
+   }
+
+   .glass-radio-group label a {
+     text-decoration: none;
+     color: inherit;
+   }
+
+   .glass-radio-group label:hover {
+     color: #a37e2c;
+     /* Dorado al hover */
+   }
+
+   .glass-radio-group input:checked+label {
+     color: #ffffff;
+   }
+
+   /* Glider (fondo móvil debajo de cada opción) */
+   .glass-glider {
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     width: calc(100% / 8);
+     /* 8 opciones */
+     border-radius: 1rem;
+     z-index: 1;
+     transition:
+       transform 0.5s cubic-bezier(0.37, 1.95, 0.66, 0.56),
+       background 0.4s ease-in-out,
+       box-shadow 0.4s ease-in-out;
+     background: linear-gradient(135deg, rgba(163, 126, 44, 0.95), #006039);
+     box-shadow: 0 0 15px rgba(163, 126, 44, 0.45);
+   }
+
+   /* Movimientos del glider (mantengo tus ids) */
+   #glass-1:checked~.glass-glider {
+     transform: translateX(0%);
+   }
+
+   #glass-2:checked~.glass-glider {
+     transform: translateX(100%);
+   }
+
+   #glass-3:checked~.glass-glider {
+     transform: translateX(200%);
+   }
+
+   #glass-4:checked~.glass-glider {
+     transform: translateX(300%);
+   }
+
+   #glass-5:checked~.glass-glider {
+     transform: translateX(400%);
+   }
+
+   #glass-6:checked~.glass-glider {
+     transform: translateX(500%);
+   }
+
+   #glass-7:checked~.glass-glider {
+     transform: translateX(600%);
+   }
+
+   #glass-8:checked~.glass-glider {
+     transform: translateX(700%);
+   }
+
+   section {
+     scroll-margin-top: 80px;
+     /* mismo valor que el padding-top del body */
+   }
+
+   /* Nav general */
+   nav ul {
+     list-style: none;
+     display: flex;
+     gap: 1rem;
+     margin: 0;
+   }
+
+   nav a {
+     color: #ffffff;
+     text-decoration: none;
+     font-weight: bold;
+     transition: color 0.3s;
+   }
+
+   nav a:hover {
+     color: #a37e2c;
+     /* Dorado al pasar */
+   }
+
+   /* Hero */
+   .hero {
+     position: relative;
+     height: 30vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     color: #ffffff;
+     overflow: hidden;
+     padding: 4rem 2rem;
+     font-family: 'Playfair Display', serif;
+   }
+
+   .hero .content {
+     position: relative;
+     z-index: 2;
+     max-width: 700px;
+     padding: 2rem;
+   }
+
+   .hero h2 {
+     font-size: 2.5rem;
+     margin-bottom: 1rem;
+   }
+
+   .hero p {
+     font-size: 1.2rem;
+     margin-bottom: 1.5rem;
+   }
+
+   /* Botón principal */
+   .btn {
+     display: inline-block;
+     margin-top: 1rem;
+     padding: 0.7rem 1.5rem;
+     background: #a37e2c;
+     /* Dorado Rolex */
+     color: #ffffff;
+     border-radius: 5px;
+     text-decoration: none;
+     font-weight: bold;
+     transition: all 0.25s ease;
+   }
+
+   .btn:hover {
+     background: #006039;
+     /* Verde al hover */
+     color: #ffffff;
+   }
+
+   /* Secciones */
+   section {
+     padding: 3rem 2rem;
+   }
+
+   /* Cards layout */
+   .cards {
+     display: flex;
+     gap: 1rem;
+     flex-wrap: wrap;
+   }
+
+   .card {
+     background: #ffffff;
+     /* tarjeta blanca para contraste */
+     padding: 1rem;
+     flex: 1;
+     min-width: 200px;
+     border-radius: 8px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
+     color: #006039;
+     /* texto verde */
+   }
+
+   /* Contacto */
+   form {
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+     max-width: 400px;
+     margin: auto;
+   }
+
+   input,
+   textarea,
+   button {
+     padding: 0.7rem;
+     border-radius: 5px;
+     border: 1px solid #ccc;
+     font-family: 'Playfair Display', serif;
+   }
+
+   button {
+     background: #006039;
+     /* Verde */
+     color: #ffffff;
+     border: none;
+     cursor: pointer;
+     font-weight: 600;
+     transition: background 0.2s ease;
+   }
+
+   button:hover {
+     background: #a37e2c;
+     /* Dorado */
+     color: #ffffff;
+   }
+
+   /* Footer */
+   footer {
+     text-align: center;
+     background: #006039;
+     /* Verde Rolex */
+     color: #ffffff;
+     padding: 1rem;
+     margin-top: 2rem;
+   }
+
+   /* Animaciones de scroll */
+   .animar {
+     opacity: 0;
+     transform: translateY(50px);
+     transition: all 1s ease;
+   }
+
+   .animar.visible {
+     opacity: 1;
+     transform: translateY(0);
+   }
+
+   /* ============================
+   Hero con fondo animado
+   ============================ */
+
+   .hero {
+     position: relative;
+     height: 20vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     color: #ffffff;
+     overflow: hidden;
+     font-family: 'Playfair Display', serif;
+   }
+
+   .hero .area {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(to left, #006039 0%, #a37e2c 100%);
+     z-index: 1;
+   }
+
+   .hero .circles {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     overflow: hidden;
+     z-index: 1;
+   }
+
+   .hero .circles li {
+     position: absolute;
+     display: block;
+     list-style: none;
+     width: 20px;
+     height: 20px;
+     background: rgba(255, 255, 255, 0.12);
+     animation: animate 25s linear infinite;
+     bottom: -150px;
+   }
+
+   /* Diferentes tamaños y delays (mantengo tus números) */
+   .hero .circles li:nth-child(1) {
+     left: 25%;
+     width: 80px;
+     height: 80px;
+     animation-delay: 0s;
+   }
+
+   .hero .circles li:nth-child(2) {
+     left: 10%;
+     width: 20px;
+     height: 20px;
+     animation-delay: 2s;
+     animation-duration: 12s;
+   }
+
+   .hero .circles li:nth-child(3) {
+     left: 70%;
+     width: 20px;
+     height: 20px;
+     animation-delay: 4s;
+   }
+
+   .hero .circles li:nth-child(4) {
+     left: 40%;
+     width: 60px;
+     height: 60px;
+     animation-delay: 0s;
+     animation-duration: 18s;
+   }
+
+   .hero .circles li:nth-child(5) {
+     left: 65%;
+     width: 20px;
+     height: 20px;
+     animation-delay: 0s;
+   }
+
+   .hero .circles li:nth-child(6) {
+     left: 75%;
+     width: 110px;
+     height: 110px;
+     animation-delay: 3s;
+   }
+
+   .hero .circles li:nth-child(7) {
+     left: 35%;
+     width: 150px;
+     height: 150px;
+     animation-delay: 7s;
+   }
+
+   .hero .circles li:nth-child(8) {
+     left: 50%;
+     width: 25px;
+     height: 25px;
+     animation-delay: 15s;
+     animation-duration: 45s;
+   }
+
+   .hero .circles li:nth-child(9) {
+     left: 20%;
+     width: 15px;
+     height: 15px;
+     animation-delay: 2s;
+     animation-duration: 35s;
+   }
+
+   .hero .circles li:nth-child(10) {
+     left: 85%;
+     width: 150px;
+     height: 150px;
+     animation-delay: 0s;
+     animation-duration: 11s;
+   }
+
+   .hero {
+     position: relative;
+   }
+
+   @keyframes animate {
+     0% {
+       transform: translateY(0) rotate(0deg);
+       opacity: 1;
+       border-radius: 0;
+     }
+
+     100% {
+       transform: translateY(-1000px) rotate(720deg);
+       opacity: 0;
+       border-radius: 50%;
+     }
+   }
+
+   /* Footer duplicado refinado */
+   footer {
+     text-align: center;
+     padding: 40px 20px;
+     background: #006039;
+     color: #ffffff;
+   }
+
+   /* contenedor principal */
+   .main {
+     margin-top: 1em;
+     display: flex;
+     justify-content: center;
+   }
+
+   /* fila de iconos */
+   .up {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     gap: 1em;
+   }
+
+   /* base para todas las cards */
+   .card1,
+   .card2,
+   .card3,
+   .card4,
+   .card5,
+   .card6 {
+     width: 60px;
+     height: 60px;
+     background: white;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 50%;
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+     transition: .2s ease-in-out;
+   }
+
+
+   /* Hover LinkedIn */
+   .card1:hover {
+     background-color: #0A66C2;
+     transform: scale(1.1);
+   }
+
+   .card1:hover .linkedin {
+     fill: white;
+   }
+
+   /* Hover GitHub */
+   .card2:hover {
+     background-color: black;
+     transform: scale(1.1);
+   }
+
+   .card2:hover .github {
+     fill: white;
+   }
+
+   /* Hover Instagram */
+   .card3:hover {
+     background: radial-gradient(circle at 30% 107%,
+         #fdf497 0%, #fdf497 5%,
+         #fd5949 45%, #d6249f 60%, #285AEB 90%);
+     transform: scale(1.1);
+   }
+
+   .card3:hover .instagram {
+     fill: white;
+   }
+
+   /* Hover Discord */
+   .card4:hover {
+     background-color: #5865F2;
+     transform: scale(1.1);
+   }
+
+   .card4:hover .discord {
+     fill: white;
+   }
+
+   .card4 svg.discord {
+     width: 60%;
+     /* ocupa un % del círculo */
+     height: 60%;
+     fill: #5865F2;
+     /* color inicial */
+     transition: fill 0.2s;
+   }
+
+   /* Hover Telegram */
+   .card5:hover {
+     background-color: #0088cc;
+     transform: scale(1.1);
+   }
+
+   .card5:hover .telegram {
+     fill: white;
+   }
+
+   /* Hover WhatsApp */
+   .card6:hover {
+     background-color: #25D366;
+     transform: scale(1.1);
+   }
+
+   .card6 svg.whatsappSvg {
+     width: 50%;
+     /* ajusta al círculo */
+     height: 50%;
+     transition: fill 0.2s;
+     fill: #25D366;
+     /* color inicial verde */
+   }
+
+   /* Cambiar color del icono al hover */
+   .card6:hover svg.whatsappSvg {
+     fill: white;
+     /* icono blanco al pasar ratón */
+   }
+
+   /* Ajustar tamaño de los SVGs */
+   .card1 svg,
+   .card2 svg,
+   .card3 svg,
+   .card4 svg,
+   .card5 svg,
+   .card6 svg {
+     width: 28px;
+     height: 28px;
+   }
+
+
+   /* Tarjetas grandes (cards animated / 3D) */
+   .cards {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 20px;
+   }
+
+   .card {
+     width: 190px;
+     height: 254px;
+     perspective: 1000px;
+     box-shadow: 0px 0px 10px 1px #000000aa;
+     /* para efecto 3D */
+   }
+
+   /* Contenido 3D */
+   .content {
+     width: 100%;
+     height: 100%;
+     transform-style: preserve-3d;
+     transition: transform 0.5s;
+     box-shadow: 0px 0px 10px 1px #000000aa;
+     border-radius: 10px;
+     position: relative;
+   }
+
+   /* Caras front/back */
+   .front,
+   .back {
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     backface-visibility: hidden;
+     -webkit-backface-visibility: hidden;
+     border-radius: 10px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     padding: 20px;
+     box-sizing: border-box;
+     background-color: #151515;
+     /* fondo oscuro para contraste del contenido */
+     color: #ffffff;
+   }
+
+   .back {
+     transform: rotateY(180deg);
+   }
+
+   .card:hover .content {
+     transform: rotateY(180deg);
+   }
+
+   .front h3 {
+     margin-bottom: 10px;
+   }
+
+   .front p,
+   .back p {
+     font-size: 14px;
+     line-height: 1.4;
+   }
+
+   /* -------PORTAFOLIOS------*/
+   /* Centrar las tarjetas */
+   #portfolio .cards {
+     display: flex;
+     justify-content: center;
+     /* Centra horizontalmente */
+     flex-wrap: wrap;
+     gap: 20px;
+   }
+
+   /* Tarjetas con estilo de Uiverse */
+   #portfolio .card {
+     overflow: visible;
+     width: 190px;
+     height: 254px;
+     position: relative;
+     perspective: 1000px;
+   }
+
+   #portfolio .content {
+     width: 100%;
+     height: 100%;
+     transform-style: preserve-3d;
+     transition: transform 300ms;
+     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.45);
+     border-radius: 5px;
+     position: relative;
+   }
+
+   /* Caras de la tarjeta */
+   #portfolio .front,
+   #portfolio .back {
+     background-color: #006039;
+     /* Verde Rolex */
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     backface-visibility: hidden;
+     -webkit-backface-visibility: hidden;
+     border-radius: 5px;
+     overflow: hidden;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     padding: 10px;
+     box-sizing: border-box;
+     color: #ffffff;
+     z-index: 2;
+   }
+
+   /* La parte trasera tiene el gradiente animado */
+   #portfolio .back {
+     transform: rotateY(180deg);
+     position: relative;
+     overflow: hidden;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+
+   /* Gradiente animado en la parte trasera */
+   #portfolio .back::before {
+     position: absolute;
+     content: '';
+     display: block;
+     width: 160px;
+     height: 300%;
+     background: linear-gradient(90deg, transparent, #a37e2c, #a37e2c, #a37e2c, transparent);
+     animation: rotation_481 5000ms infinite linear;
+     border-radius: 5px;
+     top: -100%;
+     left: calc(50% - 80px);
+     z-index: 1;
+   }
+
+   /* Contenido trasero */
+   #portfolio .back-content {
+     position: absolute;
+     width: 99%;
+     height: 99%;
+     background-color: #006039;
+     border-radius: 5px;
+     color: #ffffff;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 30px;
+     z-index: 2;
+   }
+
+   #portfolio .back-content p {
+     font-size: 17px;
+   }
+
+   /* Efecto de giro */
+   #portfolio .card:hover .content {
+     transform: rotateY(180deg);
+   }
+
+   /* Contenido delantero */
+   #portfolio .front .front-content {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     padding: 20px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     z-index: 2;
+   }
+
+   #portfolio .front .front-content h3 {
+     text-align: center;
+     font-size: 28px;
+     padding-left: 30px;
+     padding-right: 30px;
+     position: absolute;
+     top: 1em;
+   }
+
+   #portfolio .front .front-content p {
+     font-size: 19px;
+     font-weight: 100;
+     margin-top: 3em;
+     padding-top: 20px;
+     text-transform: lowercase;
+     display: block;
+     line-height: 1.2em;
+   }
+
+   #portfolio h2 {
+     font-size: 40px;
+     text-align: center;
+   }
+
+   /* Animación de rotación */
+   @keyframes rotation_481 {
+     0% {
+       transform: rotateZ(0deg);
+     }
+
+     100% {
+       transform: rotateZ(360deg);
+     }
+   }
+
+   /* -------SERVICIOS------*/
+   /* Tarjeta con olas animadas - From Uiverse.io by MikeAndrewDesigner */
+   .cards {
+     display: flex;
+     flex-wrap: wrap;
+     /* permite que bajen a otra fila si no caben */
+     justify-content: center;
+     /* centra las tarjetas */
+     gap: 40px;
+     /* espacio entre tarjetas */
+   }
+
+   .e-card {
+     background: transparent;
+     box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.45);
+     position: relative;
+     width: 100%;
+     height: 330px;
+     border-radius: 16px;
+     overflow: hidden;
+     display: flex;
+     /* mantiene contenido alineado si quieres */
+     flex: 1 1 300px;
+     /* crece, encoge, base de 300px */
+     box-sizing: border-box;
+   }
+
+
+   /* Olas (wave) adaptadas a paleta Rolex */
+   .wave {
+     position: absolute;
+     width: 540px;
+     height: 700px;
+     opacity: 0.6;
+     left: 0;
+     top: 0;
+     margin-left: -50%;
+     margin-top: -70%;
+     background: linear-gradient(744deg, rgba(163, 126, 44, 0.25), rgba(0, 96, 57, 0.45) 60%, rgba(163, 126, 44, 0.08));
+     border-radius: 40%;
+     animation: wave 55s infinite linear;
+   }
+
+   .wave:nth-child(2) {
+     top: 210px;
+     animation-duration: 50s;
+   }
+
+   .wave:nth-child(3) {
+     animation-duration: 45s;
+   }
+
+   .playing .wave {
+     border-radius: 40%;
+     animation: wave 3s infinite linear;
+   }
+
+   .playing .wave:nth-child(2) {
+     animation-duration: 4s;
+   }
+
+   .playing .wave:nth-child(3) {
+     animation-duration: 5s;
+   }
+
+   @keyframes wave {
+     0% {
+       transform: rotate(0deg);
+     }
+
+     100% {
+       transform: rotate(360deg);
+     }
+   }
+
+   .infotop {
+     text-align: center;
+     font-size: 30px;
+     position: absolute;
+     top: 2em;
+     left: 0;
+     right: 0;
+     color: #ffffff;
+     font-weight: 600;
+     padding: 0 15px;
+     line-height: 1.3em;
+   }
+
+   .name {
+     font-size: 18px;
+     font-weight: 100;
+     margin-top: 4em;
+     text-transform: lowercase;
+     display: block;
+     line-height: 1.2em;
+   }
+
+   /* Títulos de sección */
+   #servicios h2 {
+     text-align: center;
+     margin-bottom: 40px;
+     font-size: 40px;
+     color: #ffffff;
+   }
+
+   /* Animación de entrada opcional */
+   .animar {
+     opacity: 0;
+     transform: translateY(30px);
+     animation: animarEntrada 1s forwards;
+     animation-delay: 0.3s;
+   }
+
+   /* ------ SOBRE MI -----*/
+   #sobre-mi h2 {
+     font-size: 40px;
+     text-align: left;
+     margin-left: 20px;
+   }
+
+   #sobre-mi p {
+     font-size: 20px;
+     text-align: left;
+     margin-left: 20px;
+   }
+
+   /* ------ PROCESO -----*/
+   #proceso h2 {
+     font-size: 40px;
+     text-align: left;
+     margin-left: 20px;
+   }
+
+   #proceso ol {
+     font-size: 20px;
+     line-height: 1.8;
+     color: #ffffff;
+   }
+
+   #proceso li strong {
+     font-weight: 700;
+   }
+
+   /*------- TESTIMONIOS ------*/
+
+   #testimonios {
+     background: #006039;
+     /* Verde Rolex */
+     color: #ffffff;
+     padding: 4rem 2rem;
+     text-align: center;
+   }
+
+   /* Contenedor de cards */
+   #testimonios .cards-testimonials {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 20px;
+   }
+
+   /* Cada testimonial */
+   #testimonios .card-testimonial {
+     background-color: #ffffff;
+     /* Tarjeta blanca */
+     color: #006039;
+     padding: 20px;
+     border-radius: 10px;
+     max-width: 320px;
+     flex: 1 1 280px;
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+
+   #testimonios .card-testimonial:hover {
+     transform: translateY(-5px);
+     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+   }
+
+   /* Estrellas */
+   #testimonios .stars {
+     display: flex;
+     gap: 2px;
+     color: #a37e2c;
+     /* Dorado */
+     margin-bottom: 0.5rem;
+   }
+
+   #testimonios .star {
+     width: 20px;
+     height: 20px;
+   }
+
+   /* Información extra */
+   #testimonios .infos {
+     margin-top: 0.5rem;
+   }
+
+   #testimonios .date-time {
+     color: #006039;
+     /* Verde */
+     font-size: 16px;
+     font-weight: 600;
+   }
+
+   #testimonios .description {
+     margin-top: 0.5rem;
+     line-height: 1.5;
+     color: #151515;
+     /* Oscuro para contraste */
+   }
+
+   #testimonios .author {
+     margin-top: 1rem;
+     font-weight: 600;
+     color: #006039;
+     /* Verde Rolex */
+   }
+
+   #testimonios h2 {
+     text-align: left;
+     margin-left: 20px;
+     margin-bottom: 40px;
+     font-size: 40px;
+     color: #ffffff;
+     /* manteniendo tu paleta */
+   }
+
+   /* Adaptación responsive */
+   @media (max-width: 768px) {
+     #testimonios .cards-testimonials {
+       flex-direction: column;
+       align-items: center;
+     }
+   }
+
+   /* ----- FAQ -----*/
+   #faq h2 {
+     font-size: 40px;
+     text-align: left;
+     margin-left: 20px;
+   }
+
+   #faq summary {
+     font-size: 21px;
+     text-align: left;
+     margin-left: 40px;
+   }
+
+   #faq p {
+     font-size: 18px;
+     text-align: left;
+     margin-left: 80px;
+   }
+
+   /* ----- CONTACTO -----*/
+
+   .form {
+     display: flex;
+     flex-direction: column;
+     align-self: center;
+     font-family: inherit;
+     gap: 15px;
+     padding: 2em;
+     background-color: #006039;
+     /* Verde Rolex */
+     border-radius: 20px;
+     max-width: 500px;
+     margin: 0 auto;
+   }
+
+   .form-heading {
+     text-align: center;
+     margin-bottom: 1em;
+     color: #ffffff;
+     /* Blanco */
+     font-size: 1.5em;
+   }
+
+   .form-field {
+     display: flex;
+     align-items: center;
+     border-radius: 15px;
+     padding: 0.6em;
+     background-color: #006039;
+     /* Verde */
+     box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+     transition: all 0.3s ease;
+   }
+
+   .form-field:hover {
+     box-shadow: 0 0 20px 3px rgba(163, 126, 44, 0.6);
+     /* Dorado iluminado al pasar el ratón */
+   }
+
+   .input-field {
+     background: none;
+     border: none;
+     outline: none;
+     width: 100%;
+     color: #ffffff;
+     font-size: 1em;
+     padding-left: 0.5em;
+   }
+
+   .sendMessage-btn {
+     cursor: pointer;
+     padding: 1em;
+     border-radius: 15px;
+     border: none;
+     outline: none;
+     background-color: #006039;
+     /* Verde */
+     color: #a37e2c;
+     /* Dorado */
+     font-weight: bold;
+     font-size: 1em;
+     transition: all 0.3s ease;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+   }
+
+   .sendMessage-btn:hover {
+     background-color: #a37e2c;
+     /* Dorado al pasar el ratón */
+     color: #000;
+     box-shadow: 0 0 20px rgba(163, 126, 44, 0.8);
+   }
+
+   /* Placeholder más visible */
+   .input-field::placeholder {
+     color: #bbbbbb;
+     /* Gris claro */
+     opacity: 1;
+     /* Asegura que se vea igual en todos los navegadores */
+   }
+
+   #contacto h2 {
+     font-size: 40px;
+     text-align: left;
+     margin-left: 20px;
+   }
+
+   @keyframes animarEntrada {
+     to {
+       opacity: 1;
+       transform: translateY(0);
+     }
+   }
+
+   /* Animación extra (partículas o efectos) */
+   @keyframes animate {
+     0% {
+       transform: translateY(0) rotate(0deg);
+       opacity: 1;
+       border-radius: 0;
+     }
+
+     100% {
+       transform: translateY(-1000px) rotate(720deg);
+       opacity: 0;
+       border-radius: 50%;
+     }
+   }
