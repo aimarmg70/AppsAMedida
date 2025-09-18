@@ -1,3 +1,3 @@
 # CreaTuApp.com
 Plataforma web para recibir pedidos de desarrollo de aplicaciones personalizadas. Los usuarios pueden enviar sus ideas y requerimientos mediante un formulario de contacto.
-https://aimarmg70.github.io/mi-web/
+https://aimarmg70.github.io/CreaTuApp.com/
