@@ -1,6 +1,6 @@
 // --- script.js ---
 
-// 1. Scroll suave
+// Scroll suave
 document.querySelectorAll('a[href^="#"]').forEach(enlace => {
   enlace.addEventListener("click", function (e) {
     e.preventDefault();
@@ -10,7 +10,7 @@ document.querySelectorAll('a[href^="#"]').forEach(enlace => {
   });
 });
 
-// 2. Animaciones al hacer scroll (Intersection Observer)
+// Animaciones al hacer scroll (Intersection Observer)
 const elementosAnimados = document.querySelectorAll(".animar");
 
 const observer = new IntersectionObserver((entradas) => {
@@ -23,7 +23,7 @@ const observer = new IntersectionObserver((entradas) => {
 
 elementosAnimados.forEach(el => observer.observe(el));
 
-// 3. Botón volver arriba
+// Botón volver arriba
 const btnArriba = document.createElement("button");
 btnArriba.innerText = "⬆";
 btnArriba.classList.add("btn-arriba");
@@ -37,7 +37,7 @@ window.addEventListener("scroll", () => {
   btnArriba.style.display = window.scrollY > 300 ? "block" : "none";
 });
 
-// 4. Navegación para el menú glass
+// Navegación para el menú glass
 document.querySelectorAll(".glass-radio-group label").forEach(label => {
   label.addEventListener("click", e => {
     const target = label.getAttribute("data-target");

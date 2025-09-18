@@ -8,19 +8,15 @@
      padding: 0;
      line-height: 1.6;
      background: #006039;
-     /* Verde Rolex */
      color: #ffffff;
-     padding-top: 80px;
-     /* Compensa el header fijo */
+     padding-top: 80px; /* Compensa el header fijo */
    }
 
    /* Header fijo */
    header {
      background: #a37e2c;
-     /* Dorado Rolex */
      color: #ffffff;
-     padding: 1rem 2rem;
-     /* padding general del header */
+     padding: 1rem 2rem; /* padding general del header */
      display: flex;
      justify-content: space-between;
      align-items: center;
@@ -35,7 +31,6 @@
 
    header.scrolled {
      background: rgba(163, 126, 44, 0.95);
-     /* Dorado semitransparente */
      padding: 0.7rem 2rem;
      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
    }
@@ -49,8 +44,7 @@
    header nav ul {
      list-style: none;
      display: flex;
-     gap: 0.5rem;
-     /* Menos espacio entre los cuadrados */
+     gap: 0.5rem; /* Menos espacio entre los cuadrados */
      margin-left: 1rem;
    }
 
@@ -70,7 +64,6 @@
    /* Efecto hover */
    header nav ul li a:hover {
      background: rgba(163, 126, 44, 0.18);
-     /* Dorado sutil */
      transform: translateY(-2px);
      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
      color: #ffffff;
@@ -85,15 +78,12 @@
      padding: 10px 20px;
      margin-right: 2.5rem;
      background: linear-gradient(90deg, #00543E, #007A52);
-     /* verde Rolex */
      color: #D4AF37;
-     /* dorado */
      border-radius: 12px;
      text-decoration: none;
      font-weight: 500;
      transition: 0.3s;
-     z-index: 10;
-     /* aseguramos que esté encima de los círculos */
+     z-index: 10; 
      border: 2px solid #D4AF37;
    }
 
@@ -106,7 +96,6 @@
 
    .header-right {
      flex: 0 0 auto;
-     /* que ocupe el ancho necesario, no crezca */
      text-align: right;
    }
 
@@ -115,21 +104,16 @@
      .header-center,
      .header-right {
        width: 100%;
-       /* ocupan toda la línea */
        text-align: center;
-       /* centrado */
        margin-top: 0.5rem;
-       /* separación entre lista y botón */
      }
    }
-
 
    /* Glass Menu con 8 opciones */
    .glass-radio-group {
      --bg: rgba(255, 255, 255, 0.06);
      --text: #ffffff;
      display: inline-flex;
-     /* Se ajusta al contenido */
      position: relative;
      background: var(--bg);
      border-radius: 1rem;
@@ -141,18 +125,14 @@
        0 4px 12px rgba(0, 0, 0, 0.12);
      overflow: hidden;
      padding: 0.2rem;
-     /* un pequeño espacio interno */
    }
 
    .glass-radio-group label {
      display: inline-flex;
-     /* Tamaño natural según contenido */
      align-items: center;
      justify-content: center;
      padding: 0.8rem 1.2rem;
-     /* controla el tamaño de cada botón */
      min-width: 80px;
-     /* opcional, evita que sea demasiado pequeño */
      cursor: pointer;
      font-weight: 600;
      color: var(--text);
@@ -173,7 +153,6 @@
 
    .glass-radio-group label:hover {
      color: #a37e2c;
-     /* Dorado al hover */
    }
 
    .glass-radio-group input:checked+label {
@@ -186,7 +165,6 @@
      top: 0;
      bottom: 0;
      width: calc(100% / 8);
-     /* 8 opciones */
      border-radius: 1rem;
      z-index: 1;
      transition:
@@ -197,7 +175,6 @@
      box-shadow: 0 0 15px rgba(163, 126, 44, 0.45);
    }
 
-   /* Movimientos del glider (mantengo tus ids) */
    #glass-1:checked~.glass-glider {
      transform: translateX(0%);
    }
@@ -232,7 +209,6 @@
 
    section {
      scroll-margin-top: 80px;
-     /* mismo valor que el padding-top del body */
    }
 
    /* Nav general */
@@ -252,7 +228,6 @@
 
    nav a:hover {
      color: #a37e2c;
-     /* Dorado al pasar */
    }
 
    /* Hero */
@@ -292,7 +267,6 @@
      margin-top: 1rem;
      padding: 0.7rem 1.5rem;
      background: #a37e2c;
-     /* Dorado Rolex */
      color: #ffffff;
      border-radius: 5px;
      text-decoration: none;
@@ -302,7 +276,6 @@
 
    .btn:hover {
      background: #006039;
-     /* Verde al hover */
      color: #ffffff;
    }
 
@@ -319,15 +292,13 @@
    }
 
    .card {
-     background: #ffffff;
-     /* tarjeta blanca para contraste */
+     background: #ffffff; /* tarjeta blanca para contraste */
      padding: 1rem;
      flex: 1;
      min-width: 200px;
      border-radius: 8px;
      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
      color: #006039;
-     /* texto verde */
    }
 
    /* Contacto */
@@ -350,7 +321,6 @@
 
    button {
      background: #006039;
-     /* Verde */
      color: #ffffff;
      border: none;
      cursor: pointer;
@@ -360,7 +330,6 @@
 
    button:hover {
      background: #a37e2c;
-     /* Dorado */
      color: #ffffff;
    }
 
@@ -368,7 +337,6 @@
    footer {
      text-align: center;
      background: #006039;
-     /* Verde Rolex */
      color: #ffffff;
      padding: 1rem;
      margin-top: 2rem;
@@ -433,7 +401,6 @@
      bottom: -150px;
    }
 
-   /* Diferentes tamaños y delays (mantengo tus números) */
    .hero .circles li:nth-child(1) {
      left: 25%;
      width: 80px;
@@ -527,7 +494,6 @@
      }
    }
 
-   /* Footer duplicado refinado */
    footer {
      text-align: center;
      padding: 40px 20px;
@@ -615,10 +581,8 @@
 
    .card4 svg.discord {
      width: 60%;
-     /* ocupa un % del círculo */
      height: 60%;
      fill: #5865F2;
-     /* color inicial */
      transition: fill 0.2s;
    }
 
@@ -640,17 +604,14 @@
 
    .card6 svg.whatsappSvg {
      width: 50%;
-     /* ajusta al círculo */
      height: 50%;
      transition: fill 0.2s;
      fill: #25D366;
-     /* color inicial verde */
    }
 
    /* Cambiar color del icono al hover */
    .card6:hover svg.whatsappSvg {
      fill: white;
-     /* icono blanco al pasar ratón */
    }
 
    /* Ajustar tamaño de los SVGs */
@@ -663,7 +624,6 @@
      width: 28px;
      height: 28px;
    }
-
 
    /* Tarjetas grandes (cards animated / 3D) */
    .cards {
@@ -678,7 +638,6 @@
      height: 254px;
      perspective: 1000px;
      box-shadow: 0px 0px 10px 1px #000000aa;
-     /* para efecto 3D */
    }
 
    /* Contenido 3D */
@@ -708,7 +667,6 @@
      padding: 20px;
      box-sizing: border-box;
      background-color: #151515;
-     /* fondo oscuro para contraste del contenido */
      color: #ffffff;
    }
 
@@ -735,7 +693,6 @@
    #portfolio .cards {
      display: flex;
      justify-content: center;
-     /* Centra horizontalmente */
      flex-wrap: wrap;
      gap: 20px;
    }
@@ -763,7 +720,6 @@
    #portfolio .front,
    #portfolio .back {
      background-color: #006039;
-     /* Verde Rolex */
      position: absolute;
      width: 100%;
      height: 100%;
@@ -881,15 +837,11 @@
    }
 
    /* -------SERVICIOS------*/
-   /* Tarjeta con olas animadas - From Uiverse.io by MikeAndrewDesigner */
    .cards {
      display: flex;
      flex-wrap: wrap;
-     /* permite que bajen a otra fila si no caben */
      justify-content: center;
-     /* centra las tarjetas */
      gap: 40px;
-     /* espacio entre tarjetas */
    }
 
    .e-card {
@@ -901,14 +853,10 @@
      border-radius: 16px;
      overflow: hidden;
      display: flex;
-     /* mantiene contenido alineado si quieres */
      flex: 1 1 300px;
-     /* crece, encoge, base de 300px */
      box-sizing: border-box;
    }
 
-
-   /* Olas (wave) adaptadas a paleta Rolex */
    .wave {
      position: absolute;
      width: 540px;
@@ -1024,7 +972,6 @@
    }
 
    /*------- TESTIMONIOS ------*/
-
    #testimonios {
      background: #006039;
      /* Verde Rolex */
@@ -1044,7 +991,6 @@
    /* Cada testimonial */
    #testimonios .card-testimonial {
      background-color: #ffffff;
-     /* Tarjeta blanca */
      color: #006039;
      padding: 20px;
      border-radius: 10px;
@@ -1067,7 +1013,6 @@
      display: flex;
      gap: 2px;
      color: #a37e2c;
-     /* Dorado */
      margin-bottom: 0.5rem;
    }
 
@@ -1083,7 +1028,6 @@
 
    #testimonios .date-time {
      color: #006039;
-     /* Verde */
      font-size: 16px;
      font-weight: 600;
    }
@@ -1092,14 +1036,12 @@
      margin-top: 0.5rem;
      line-height: 1.5;
      color: #151515;
-     /* Oscuro para contraste */
    }
 
    #testimonios .author {
      margin-top: 1rem;
      font-weight: 600;
      color: #006039;
-     /* Verde Rolex */
    }
 
    #testimonios h2 {
@@ -1108,7 +1050,6 @@
      margin-bottom: 40px;
      font-size: 40px;
      color: #ffffff;
-     /* manteniendo tu paleta */
    }
 
    /* Adaptación responsive */
@@ -1148,7 +1089,6 @@
      gap: 15px;
      padding: 2em;
      background-color: #006039;
-     /* Verde Rolex */
      border-radius: 20px;
      max-width: 500px;
      margin: 0 auto;
@@ -1158,7 +1098,6 @@
      text-align: center;
      margin-bottom: 1em;
      color: #ffffff;
-     /* Blanco */
      font-size: 1.5em;
    }
 
@@ -1168,14 +1107,12 @@
      border-radius: 15px;
      padding: 0.6em;
      background-color: #006039;
-     /* Verde */
      box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
      transition: all 0.3s ease;
    }
 
    .form-field:hover {
      box-shadow: 0 0 20px 3px rgba(163, 126, 44, 0.6);
-     /* Dorado iluminado al pasar el ratón */
    }
 
    .input-field {
@@ -1195,9 +1132,7 @@
      border: none;
      outline: none;
      background-color: #006039;
-     /* Verde */
      color: #a37e2c;
-     /* Dorado */
      font-weight: bold;
      font-size: 1em;
      transition: all 0.3s ease;
@@ -1206,7 +1141,6 @@
 
    .sendMessage-btn:hover {
      background-color: #a37e2c;
-     /* Dorado al pasar el ratón */
      color: #000;
      box-shadow: 0 0 20px rgba(163, 126, 44, 0.8);
    }
@@ -1214,9 +1148,7 @@
    /* Placeholder más visible */
    .input-field::placeholder {
      color: #bbbbbb;
-     /* Gris claro */
      opacity: 1;
-     /* Asegura que se vea igual en todos los navegadores */
    }
 
    #contacto h2 {
@@ -1232,7 +1164,6 @@
      }
    }
 
-   /* Animación extra (partículas o efectos) */
    @keyframes animate {
      0% {
        transform: translateY(0) rotate(0deg);
